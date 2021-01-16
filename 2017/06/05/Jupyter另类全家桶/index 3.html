@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"clarkchen.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Jupyter DashBoards 模型人员直接对运营人员，BI系统0开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jupyter DashBoards 另类全家桶">
+<meta property="og:url" content="http://clarkchen.github.io/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/index.html">
+<meta property="og:site_name" content="Clark Blog">
+<meta property="og:description" content="Jupyter DashBoards 模型人员直接对运营人员，BI系统0开发">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://clarkchen.github.io/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/workflow.png">
+<meta property="article:published_time" content="2017-06-04T16:01:20.000Z">
+<meta property="article:modified_time" content="2020-11-11T06:14:34.000Z">
+<meta property="article:author" content="ClarkChen">
+<meta property="article:tag" content="Jupyter">
+<meta property="article:tag" content="架构">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="随笔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://clarkchen.github.io/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/workflow.png">
+
+<link rel="canonical" href="http://clarkchen.github.io/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Jupyter DashBoards 另类全家桶 | Clark Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Clark Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Full Stack Engineer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://clarkchen.github.io/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ClarkChen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Clark Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Jupyter DashBoards 另类全家桶
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-06-05 00:01:20" itemprop="dateCreated datePublished" datetime="2017-06-05T00:01:20+08:00">2017-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-11 14:14:34" itemprop="dateModified" datetime="2020-11-11T14:14:34+08:00">2020-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Jupyter DashBoards 模型人员直接对运营人员，BI系统0开发</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>今天看到一个非常好的功能 Jupyter DashBoards</p>
+<p>基于Jupyter的仪表盘，非常Nice的功能，可以实现定制化，可视化与代码的分离</p>
+<p>然后在这个基础上依次修正以及补充，基于Jupyter的一些误区和知识</p>
+<p>本机的环境是 py3jupyter</p>
+<p>感觉今天最大的收货是对学会看 docker 的配置文件 + 学会查找 github issue</p>
+<a id="more"></a>
+
+<h2 id="插件-nb-extensions"><a href="#插件-nb-extensions" class="headerlink" title="插件-nb extensions"></a>插件-nb extensions</h2><p>Git项目地址是，<a target="_blank" rel="noopener" href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions">nbextensions</a> 以及 <a target="_blank" rel="noopener" href="https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator">nbextensions_configurator</a>。前者是各类型有用的插件，后者是能够直接在Jupyter 上图形话调节界面的功能。</p>
+<p>这里今天得到的收获主要是基于虚拟环境的一个配置问题</p>
+<p>在官网上，安装完 nbextensions 之后，本质是将一<br>大堆插件放在下面目录下</p>
+<p><code>/Users/&#123;user&#125;/Library/Jupyter/extensions</code></p>
+<p>接下来进行插件激活和路径指定，官网上的提示使用的是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter contrib nbextension install --user</span><br></pre></td></tr></table></figure>
+<p>如果这么操作的话，是在用户目录 例如 <code>/home/user/.jupyter</code> 下面生成 nbextensions 的配置, 这会导致环境不隔离的情况。</p>
+<p>正确的做法，切换到新的环境下的jupyter，执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter contrib nbextension install --sys-prefix</span><br></pre></td></tr></table></figure>
+<p>这样就做到只影响该环境下的Jupyter，在某环境下的 /etc/jupyter 文件夹下产生对应的配置文件，nb的 和 notebook的都有，如果对于 notebook的配置有特殊的配置，可以写在这里，例如密码，token等。</p>
+<p>如果要删除该内容，install 替换为 uninstall。</p>
+<p>如果因为选择的是 users 会导致的问题是 <code>no module named nbextensions</code>，某些和root 环境不一致的环境找不到配置文件</p>
+<h3 id="jupynter-版本的问题"><a href="#jupynter-版本的问题" class="headerlink" title="jupynter 版本的问题"></a>jupynter 版本的问题</h3><p>2017年06月04日，jupyter notebook 的版本已经升级到了5.0，但是通过 pip 安装的 nbextensions 的插件所写的代码，是4.x的程序，这个通过找 github issues, 发现作者已经在 master 分支上做了修改，nbextensions.py 这个文件，修改如下代码即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    # notebook &gt; 4.2</span><br><span class="line">    from notebook.nbextensions import _get_nbextension_dir as get_nbext_dir</span><br><span class="line">except:</span><br><span class="line">    # notebook &lt;&#x3D; 4.2</span><br><span class="line">    from notebook.nbextensions import _get_nbext_dir as get_nbext_dir</span><br></pre></td></tr></table></figure>
+<h2 id="Jupyter-DashBoard"><a href="#Jupyter-DashBoard" class="headerlink" title="Jupyter DashBoard"></a>Jupyter DashBoard</h2><h3 id="代码组成"><a href="#代码组成" class="headerlink" title="代码组成"></a>代码组成</h3><p>这是一个非常另类的套装, 由以下几个部分组成</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jupyter/dashboards">jupyter/dashboards</a>， notebook 插件将代码转化为可定制的 dashboard</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jupyter-incubator/dashboards_bundlers">dashboards_bundlers</a>，notebook 插件将定制好的dashboard 输出到 server端</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jupyter-incubator/dashboards_server">dashboards_server</a>，nodejs web框架，主要作用是与juypter server 通信展示只读功能的dashboard</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jupyter/kernel_gateway">kernel_gateway</a>，一个中间的类似于代理的web框架，用于和dashboard server 通信</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jupyter-incubator/dashboards_setup">dashboards_setup</a> ，一套基于docker的服务范例，讲解各个服务如何配置</p>
+<p>架构流程如下图：</p>
+<img src="/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/workflow.png" class="" title="流程图">
+
+<p>整完这一套，模型开发人员，两行代码就一套定制化的BI系统。这套系统搭建的时候最难的地方是连接</p>
+<h3 id="dashboard-连接"><a href="#dashboard-连接" class="headerlink" title="dashboard 连接"></a>dashboard 连接</h3><ul>
+<li>Jupyter Notebook</li>
+</ul>
+<p>这个是一端，启动的时候需要配置一下启动token和Server 的端口，方便和另一端加密验证。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># token 的配置写在了配置文件里</span><br><span class="line"># 端口设置在环境变量中</span><br><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Dashboard Server</li>
+</ul>
+<p>用于HTML展示。有两个主要输入，一个是token作为加密验证的功能，一个是 gateway的地址 <a href="http://host:port">http://host:port</a> 即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 和 kernal 指定的ip 一致</span><br><span class="line"># token 设置在了环境变量里</span><br><span class="line">jupyter-dashboards-server --KERNEL_GATEWAY_URL&#x3D;http:&#x2F;&#x2F;&#123;kernal&#125;:8888</span><br></pre></td></tr></table></figure>
+<ul>
+<li>kernal gateway</li>
+</ul>
+<p>这个是在 dashboard_server 和 jupyter server 之间的一道桥梁。它和jupyter server的连接方式比较神奇，应该是通过jupyter 内核来通信，也就是二者需要在同一台机器上即可。</p>
+<p>但是最合理的方式是，kernal gateway 和 jupyter 在同一目录下，统一端口上启动，否则将会有一些模板加载等小错，这里更神奇的是同一端口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter kernelgateway --KernelGatewayApp.ip&#x3D;0.0.0.0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>环境变量</li>
+</ul>
+<p>除了命令行直接传进去的配置，为了保持独立性，还需要在环境变量中增加两项的设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export DASHBOARD_SERVER_URL&#x3D;http:&#x2F;&#x2F;&#123;dash_server_host&#125;:3000</span><br><span class="line">export KG_AUTH_TOKEN&#x3D;&#39;xxxxxxxxxxxxxxxxxxxx&#39; # 与Jupyter Notebook 的验证Token保持一致</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="环境隔离"><a href="#环境隔离" class="headerlink" title="环境隔离"></a>环境隔离</h3><p>在安装这些工具的时候，他们很多是 nbextension，所以启用的时候注意环境的隔离<br>例如 dashboard的启动方式  <code>jupyter dashboards quick-setup --sys-prefix</code><br>这样就做到与环境隔离了</p>
+<h3 id="Docker当文档"><a href="#Docker当文档" class="headerlink" title="Docker当文档"></a>Docker当文档</h3><p>这一部分，其实我是感觉最精华的一部分。</p>
+<p>首先我大概了解了一下 <a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_XMjY5Mjk4MzY2OA==.html?from=s1.8-1-1.2&spm=a2h0k.8191407.0.0">docker是什么</a></p>
+<p>相当于 一台机器上的 一个 container 容器，虚拟机，跟本机系统环境无关，能在docker的镜像中跑成功的程序，一定能在其他机器上跑成功。</p>
+<p>我自己按照 dashboards_setup的教程，在本地拉了三个镜像服务，然后启动，结果耗时两小时，发现可以跑成功</p>
+<p>看是看懂了MakeFile的意义，我直接去看了这三个镜像分别干了什么，notebook 和 dserver 都和我想的一样</p>
+<p>后来发现困扰我最久的kernal的启动方式，真实跪了<a target="_blank" rel="noopener" href="https://github.com/jupyter-incubator/dashboards_setup/blob/master/dev_deploy/docker-compose.yml">总体配置</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">kernel_gateway:</span><br><span class="line">   build:</span><br><span class="line">     context: .</span><br><span class="line">     dockerfile: Dockerfile.kernel</span><br><span class="line">     args:</span><br><span class="line">       # pip versioning by default</span><br><span class="line">       # Replace with local tarballs like &#x2F;src&#x2F;jupyter_declarativewidgets-someversion.tar.gz</span><br><span class="line">       DECLWIDGETS_PKG: &#39;jupyter_declarativewidgets&#x3D;&#x3D;0.7.*&#39;</span><br><span class="line">       IPYWIDGETS_PKG: &#39;ipywidgets&#x3D;&#x3D;5.1.*&#39;</span><br><span class="line">   volumes_from:</span><br><span class="line">     - notebook</span><br><span class="line">   environment:</span><br><span class="line">     KG_ALLOW_ORIGIN: &#39;*&#39;</span><br></pre></td></tr></table></figure>
+<p>得出的结论是 和 notebook 共享启动地址</p>
+<p>在看<a target="_blank" rel="noopener" href="https://github.com/jupyter-incubator/dashboards_setup/blob/master/dev_deploy/Dockerfile.kernel">具体配置</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># run kernel gateway, not notebook server</span><br><span class="line">CMD [&quot;jupyter&quot;, &quot;kernelgateway&quot;, &quot;--KernelGatewayApp.ip&#x3D;0.0.0.0&quot;]</span><br></pre></td></tr></table></figure>
+<p>得出的结论是用默认端口号，共享端口</p>
+<p>之后我再本地按照这种方式启动了，kernal 直接成功</p>
+<p>这件事情让我得到了很大的启示，docker 真的很强大，这是最清楚的文档，能让机器看懂的文档，人更能看懂</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>这个主要是参考，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26739300?group_id=843868091631955968">「工具控」| TL001. 装扮你的Jupyter
+</a>, 学了很厉害的几个小技巧</p>
+<h3 id="magic"><a href="#magic" class="headerlink" title="magic"></a>magic</h3><p>只要在 notebook 执行 %% magic 就能看到介绍<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%timeit range(1000)</span><br><span class="line"></span><br><span class="line">%env PATH</span><br></pre></td></tr></table></figure>
+<h3 id="ipython-kernal-预加载"><a href="#ipython-kernal-预加载" class="headerlink" title="ipython kernal 预加载"></a>ipython kernal 预加载</h3><p>创建配置文件，就能在内核中添加一些预加载的代码了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipython profile create</span><br></pre></td></tr></table></figure>
+<p>自己添加的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">c.InteractiveShellApp.exec_lines &#x3D; [</span><br><span class="line">        &quot;import pandas as pd&quot;,</span><br><span class="line">        &quot;import numpy as np&quot;,</span><br><span class="line">        &quot;import scipy.stats as spstats&quot;,</span><br><span class="line">        &quot;import scipy as sp&quot;,</span><br><span class="line">        &quot;import matplotlib.pyplot as plt&quot;,</span><br><span class="line">	    &quot;import matplotlib&quot;,</span><br><span class="line">        &quot;matplotlib.style.use(&#39;ggplot&#39;)&quot;,</span><br><span class="line">       &quot;%load_ext autoreload&quot;,</span><br><span class="line">616    &quot;%autoreload 2&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">c.IPKernelApp.matplotlib &#x3D; &#39;inline&#39;</span><br><span class="line"></span><br><span class="line">c.InlineBackend.figure_format &#x3D; &#39;retina&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h3><p>jupyter notebook 的配置文件，分为两种一种是全局的，一种是环境的，环境的上面讲过了，主要是在 etc 环境下，全局的就是按照官网的生成文件的方式就能搞定。</p>
+<h3 id="jupyter-themes"><a href="#jupyter-themes" class="headerlink" title="jupyter-themes"></a><a target="_blank" rel="noopener" href="https://github.com/dunovank/jupyter-themes">jupyter-themes</a></h3><p>这是一个很厉害的插件，能实现将Jupyter 设置各种 背景，但是绘图比较蛋疼，还是以白底jupyter 为主吧</p>
+<p>这个知道怎么玩酷炫就好了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 设置黑色背景</span><br><span class="line">jt -t chesterish</span><br><span class="line"># 恢复原样</span><br><span class="line">jt -r</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Jupyter/" rel="tag"># Jupyter</a>
+              <a href="/tags/%E6%9E%B6%E6%9E%84/" rel="tag"># 架构</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/11/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/" rel="next" title="利用Hexo搭建Gitbook">
+      利用Hexo搭建Gitbook <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6-nb-extensions"><span class="nav-number">2.</span> <span class="nav-text">插件-nb extensions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jupynter-%E7%89%88%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">jupynter 版本的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-DashBoard"><span class="nav-number">3.</span> <span class="nav-text">Jupyter DashBoard</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%84%E6%88%90"><span class="nav-number">3.1.</span> <span class="nav-text">代码组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dashboard-%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.2.</span> <span class="nav-text">dashboard 连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%9A%94%E7%A6%BB"><span class="nav-number">3.3.</span> <span class="nav-text">环境隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker%E5%BD%93%E6%96%87%E6%A1%A3"><span class="nav-number">3.4.</span> <span class="nav-text">Docker当文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#magic"><span class="nav-number">4.1.</span> <span class="nav-text">magic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython-kernal-%E9%A2%84%E5%8A%A0%E8%BD%BD"><span class="nav-number">4.2.</span> <span class="nav-text">ipython kernal 预加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-notebook"><span class="nav-number">4.3.</span> <span class="nav-text">jupyter notebook</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-themes"><span class="nav-number">4.4.</span> <span class="nav-text">jupyter-themes</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ClarkChen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ClarkChen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+  <script src='https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize(JSON.stringify());
+    }
+  </script>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
