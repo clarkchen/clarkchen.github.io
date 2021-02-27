@@ -17,18 +17,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"clarkchen.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"clarkchen.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="ClarkChen Blog">
-<meta property="og:url" content="https://clarkchen.github.io/index.html">
+<meta property="og:url" content="https://clarkchen.com/index.html">
 <meta property="og:site_name" content="ClarkChen Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="ClarkChen">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://clarkchen.github.io/">
+<link rel="canonical" href="https://clarkchen.com/">
 
 
 <script id="page-configurations">
@@ -72,7 +72,9 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -156,7 +158,151 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.github.io/2021/01/09/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2021/02/21/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ClarkChen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ClarkChen Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/21/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/" class="post-title-link" itemprop="url">HEXO显示Latex公式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-21 12:40:58" itemprop="dateCreated datePublished" datetime="2021-02-21T12:40:58+08:00">2021-02-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-27 09:28:11" itemprop="dateModified" datetime="2021-02-27T09:28:11+08:00">2021-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2021年02月21日,我遇到的问题是在 typero里面顺利编辑的Latex 公式,但是在Hexo生成的页面里面不显示<br>需要安装一些插件和做一些配置,就ok了</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/21/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2021/02/17/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ClarkChen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ClarkChen Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/17/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/" class="post-title-link" itemprop="url">解析借贷类产品套路</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-17 16:17:49" itemprop="dateCreated datePublished" datetime="2021-02-17T16:17:49+08:00">2021-02-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-27 09:25:51" itemprop="dateModified" datetime="2021-02-27T09:25:51+08:00">2021-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在面对互联网金融领域的各种借贷产品,例如装修贷款,信用卡借贷,借呗花呗,京东白条,一定要注意他们的利率和还款模式<br>否则很容被套路<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/17/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2021/01/09/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -187,7 +333,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-10 09:35:27" itemprop="dateModified" datetime="2021-01-10T09:35:27+08:00">2021-01-10</time>
+                <time title="修改时间：2021-02-23 13:56:12" itemprop="dateModified" datetime="2021-02-23T13:56:12+08:00">2021-02-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +387,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.github.io/2020/11/11/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2020/11/11/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -272,7 +418,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-10 09:35:14" itemprop="dateModified" datetime="2021-01-10T09:35:14+08:00">2021-01-10</time>
+                <time title="修改时间：2021-02-27 09:30:01" itemprop="dateModified" datetime="2021-02-27T09:30:01+08:00">2021-02-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -327,7 +473,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.github.io/2020/11/11/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2020/11/11/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -358,7 +504,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-10 09:36:21" itemprop="dateModified" datetime="2021-01-10T09:36:21+08:00">2021-01-10</time>
+                <time title="修改时间：2021-02-23 13:56:12" itemprop="dateModified" datetime="2021-02-23T13:56:12+08:00">2021-02-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -385,12 +531,8 @@
 <p>例如<br>域名：clarkchen.github.io<br>对应的git 项目是<br>静态repo：<a target="_blank" rel="noopener" href="https://github.com/clarkchen/clarkchen.github.io">https://github.com/clarkchen/clarkchen.github.io</a></p>
 <p>但是这个项目里面是纯的HTML文件，而我们日常书写的习惯是，通过Markdown来写作，所以需要找一个软件能够将我们写的Markdown的内容，自动生成 html并且上传到 对应的 <strong>静态repo</strong> 的项目距下面，我们选择的工具是 Hexo。</p>
 <h1 id="Hexo-Deploy"><a href="#Hexo-Deploy" class="headerlink" title="Hexo Deploy"></a>Hexo Deploy</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment.html">https://hexo.io/zh-cn/docs/one-command-deployment.html</a></p>
-<p>例如我的配置是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:clarkchen&#x2F;clarkchen.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  name: clarkchen</span><br><span class="line">  email: cxfhacker@gmail.com</span><br><span class="line">  ignore_hidden: false # default is true</span><br><span class="line">  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>做好这个配置之后，我们可以将markdown 对应的文件和 assests 传到另外一个 repo 上，然后编辑完成之后，通过 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy </span><br></pre></td></tr></table></figure>
-<p>来完成自动的文件上传和部署</p>
+<p>例如我的配置是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:clarkchen&#x2F;clarkchen.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  name: clarkchen</span><br><span class="line">  email: cxfhacker@gmail.com</span><br><span class="line">  ignore_hidden: false # default is true</span><br><span class="line">  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>做好这个配置之后，我们可以将markdown 对应的文件和 assests 传到另外一个 repo 上，然后编辑完成之后，通过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy </span><br></pre></td></tr></table></figure><br>来完成自动的文件上传和部署</p>
 
       
     </div>
@@ -410,7 +552,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.github.io/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -441,7 +583,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-11 14:14:34" itemprop="dateModified" datetime="2020-11-11T14:14:34+08:00">2020-11-11</time>
+                <time title="修改时间：2021-02-23 13:56:12" itemprop="dateModified" datetime="2021-02-23T13:56:12+08:00">2021-02-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -553,7 +695,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -566,7 +708,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -672,6 +814,61 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
