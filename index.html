@@ -17,13 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"clarkchen.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"clarkchen.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
+<meta property="og:type" content="website">
 <meta property="og:title" content="ClarkChen Blog">
 <meta property="og:url" content="https://clarkchen.com/index.html">
 <meta property="og:site_name" content="ClarkChen Blog">
+<meta property="og:description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="ClarkChen">
 <meta name="twitter:card" content="summary">
@@ -41,8 +43,17 @@
   };
 </script>
 
-  <title>ClarkChen Blog</title>
+  <title>ClarkChen Blog - Full Stack Engineer</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C885SP0FR5"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C885SP0FR5');
+      }
+    </script>
 
 
 
@@ -102,6 +113,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -131,11 +143,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -158,12 +197,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2021/02/21/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/Hexo/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="ClarkChen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -172,7 +211,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/21/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/" class="post-title-link" itemprop="url">HEXO显示Latex公式</a>
+            <a href="/Hexo/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/" class="post-title-link" itemprop="url">HEXO显示Latex公式</a>
         </h2>
 
         <div class="post-meta">
@@ -189,8 +228,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-27 09:28:11" itemprop="dateModified" datetime="2021-02-27T09:28:11+08:00">2021-02-27</time>
+                <time title="修改时间：2021-03-06 16:16:07" itemprop="dateModified" datetime="2021-03-06T16:16:07+08:00">2021-03-06</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
 
           
 
@@ -206,7 +254,7 @@
           <p>2021年02月21日,我遇到的问题是在 typero里面顺利编辑的Latex 公式,但是在Hexo生成的页面里面不显示<br>需要安装一些插件和做一些配置,就ok了</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/02/21/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/#more" rel="contents">
+              <a class="btn" href="/Hexo/HEXO%E6%98%BE%E7%A4%BALatex%E5%85%AC%E5%BC%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -230,12 +278,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2021/02/17/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/%E9%87%91%E8%9E%8D/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="ClarkChen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -244,7 +292,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/17/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/" class="post-title-link" itemprop="url">解析借贷类产品套路</a>
+            <a href="/%E9%87%91%E8%9E%8D/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/" class="post-title-link" itemprop="url">解析借贷类产品套路</a>
         </h2>
 
         <div class="post-meta">
@@ -261,8 +309,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-27 09:25:51" itemprop="dateModified" datetime="2021-02-27T09:25:51+08:00">2021-02-27</time>
+                <time title="修改时间：2021-03-06 18:19:51" itemprop="dateModified" datetime="2021-03-06T18:19:51+08:00">2021-03-06</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%87%91%E8%9E%8D/" itemprop="url" rel="index"><span itemprop="name">金融</span></a>
+                </span>
+            </span>
 
           
 
@@ -278,7 +335,7 @@
           <p>在面对互联网金融领域的各种借贷产品,例如装修贷款,信用卡借贷,借呗花呗,京东白条,一定要注意他们的利率和还款模式<br>否则很容被套路<br>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/02/17/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/#more" rel="contents">
+              <a class="btn" href="/%E9%87%91%E8%9E%8D/%E8%A7%A3%E6%9E%90%E5%80%9F%E8%B4%B7%E7%B1%BB%E4%BA%A7%E5%93%81%E5%A5%97%E8%B7%AF/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -302,12 +359,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2021/01/09/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/Hexo/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="ClarkChen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -316,7 +373,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/01/09/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/" class="post-title-link" itemprop="url">Hexo中插入mermaid diagrams</a>
+            <a href="/Hexo/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/" class="post-title-link" itemprop="url">Hexo中插入mermaid diagrams</a>
         </h2>
 
         <div class="post-meta">
@@ -333,7 +390,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-23 13:56:12" itemprop="dateModified" datetime="2021-02-23T13:56:12+08:00">2021-02-23</time>
+                <time title="修改时间：2021-03-06 17:00:35" itemprop="dateModified" datetime="2021-03-06T17:00:35+08:00">2021-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -341,7 +398,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
                 </span>
             </span>
 
@@ -363,7 +420,7 @@
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>技术方案选取,  <a target="_blank" rel="noopener" href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams">hexo-filter-mermaid-diagrams</a>, 下面将其操作过程进行翻译.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/01/09/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/#more" rel="contents">
+              <a class="btn" href="/Hexo/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5mermaid-diagrams/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -387,12 +444,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2020/11/11/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/Hexo/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="ClarkChen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -401,7 +458,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/11/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Hexo启动教程</a>
+            <a href="/Hexo/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Hexo启动教程</a>
         </h2>
 
         <div class="post-meta">
@@ -418,7 +475,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-27 09:30:01" itemprop="dateModified" datetime="2021-02-27T09:30:01+08:00">2021-02-27</time>
+                <time title="修改时间：2021-03-06 17:00:38" itemprop="dateModified" datetime="2021-03-06T17:00:38+08:00">2021-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -426,7 +483,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
                 </span>
             </span>
 
@@ -449,7 +506,7 @@
 <li><p>检查下版本， 以下为最新版本</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/11/11/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/#more" rel="contents">
+              <a class="btn" href="/Hexo/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -473,12 +530,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2020/11/11/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/Hexo/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="ClarkChen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -487,7 +544,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/11/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/" class="post-title-link" itemprop="url">利用Hexo搭建Gitbook</a>
+            <a href="/Hexo/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/" class="post-title-link" itemprop="url">利用Hexo搭建Gitbook</a>
         </h2>
 
         <div class="post-meta">
@@ -504,7 +561,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-23 13:56:12" itemprop="dateModified" datetime="2021-02-23T13:56:12+08:00">2021-02-23</time>
+                <time title="修改时间：2021-03-06 16:16:15" itemprop="dateModified" datetime="2021-03-06T16:16:15+08:00">2021-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -512,7 +569,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
                 </span>
             </span>
 
@@ -552,12 +609,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/Life/%E7%88%B7%E7%88%B7%E8%BF%BD%E5%BF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="ClarkChen">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -566,7 +623,89 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/" class="post-title-link" itemprop="url">Jupyter DashBoards 另类全家桶</a>
+            <a href="/Life/%E7%88%B7%E7%88%B7%E8%BF%BD%E5%BF%86/" class="post-title-link" itemprop="url">爷爷追忆</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 16:43:59" itemprop="dateCreated datePublished" datetime="2020-04-28T16:43:59+08:00">2020-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-06 16:54:20" itemprop="dateModified" datetime="2021-03-06T16:54:20+08:00">2021-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="爷爷去世"><a href="#爷爷去世" class="headerlink" title="爷爷去世"></a>爷爷去世</h1><p>逝者爷爷陈连，讲述者奶奶李芝粉，笔者孙子陈曦</p>
+<p>2013年6月25日，爷爷去世了，享年85岁，是一位非常慈祥的，脾气古怪的老人。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Life/%E7%88%B7%E7%88%B7%E8%BF%BD%E5%BF%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://clarkchen.com/Tech/Jupyter/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ClarkChen">
+      <meta itemprop="description" content="一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ClarkChen Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Tech/Jupyter/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/" class="post-title-link" itemprop="url">Jupyter DashBoards 另类全家桶</a>
         </h2>
 
         <div class="post-meta">
@@ -583,7 +722,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-23 13:56:12" itemprop="dateModified" datetime="2021-02-23T13:56:12+08:00">2021-02-23</time>
+                <time title="修改时间：2021-02-27 10:36:06" itemprop="dateModified" datetime="2021-02-27T10:36:06+08:00">2021-02-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -591,7 +730,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Code/" itemprop="url" rel="index"><span itemprop="name">Code</span></a>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF-Jupyter/" itemprop="url" rel="index"><span itemprop="name">技术/Jupyter</span></a>
                 </span>
             </span>
 
@@ -609,7 +748,7 @@
           <p>Jupyter DashBoards 模型人员直接对运营人员，BI系统0开发</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/06/05/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+              <a class="btn" href="/Tech/Jupyter/Jupyter%E5%8F%A6%E7%B1%BB%E5%85%A8%E5%AE%B6%E6%A1%B6/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -688,27 +827,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">ClarkChen</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">一个爱编程，做管理，正在苦练写作能力的程序员; A Full Stack Engineer</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -787,6 +926,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
