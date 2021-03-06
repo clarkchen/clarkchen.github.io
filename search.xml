@@ -194,23 +194,6 @@ Bob-->>John: Jolly good!</pre>
       </tags>
   </entry>
   <entry>
-    <title>利用Hexo搭建Gitbook</title>
-    <url>/Hexo/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/</url>
-    <content><![CDATA[<p>大概原理是我们可以将一个github repo 里面的内容隐射到一个域名下</p>
-<p>例如<br>域名：clarkchen.github.io<br>对应的git 项目是<br>静态repo：<a href="https://github.com/clarkchen/clarkchen.github.io">https://github.com/clarkchen/clarkchen.github.io</a></p>
-<p>但是这个项目里面是纯的HTML文件，而我们日常书写的习惯是，通过Markdown来写作，所以需要找一个软件能够将我们写的Markdown的内容，自动生成 html并且上传到 对应的 <strong>静态repo</strong> 的项目距下面，我们选择的工具是 Hexo。</p>
-<h1 id="Hexo-Deploy"><a href="#Hexo-Deploy" class="headerlink" title="Hexo Deploy"></a>Hexo Deploy</h1><p><a href="https://hexo.io/zh-cn/docs/one-command-deployment.html">https://hexo.io/zh-cn/docs/one-command-deployment.html</a></p>
-<p>例如我的配置是<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:clarkchen&#x2F;clarkchen.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  name: clarkchen</span><br><span class="line">  email: cxfhacker@gmail.com</span><br><span class="line">  ignore_hidden: false # default is true</span><br><span class="line">  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>做好这个配置之后，我们可以将markdown 对应的文件和 assests 传到另外一个 repo 上，然后编辑完成之后，通过<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo deploy </span><br></pre></td></tr></table></figure><br>来完成自动的文件上传和部署</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Gitbok</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo启动教程</title>
     <url>/Hexo/Hexo%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="首次启动"><a href="#首次启动" class="headerlink" title="首次启动"></a>首次启动</h2><ul>
@@ -257,6 +240,23 @@ Bob-->>John: Jolly good!</pre>
       <categories>
         <category>Hexo</category>
       </categories>
+  </entry>
+  <entry>
+    <title>利用Hexo搭建Gitbook</title>
+    <url>/Hexo/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGitbook/</url>
+    <content><![CDATA[<p>大概原理是我们可以将一个github repo 里面的内容隐射到一个域名下</p>
+<p>例如<br>域名：clarkchen.github.io<br>对应的git 项目是<br>静态repo：<a href="https://github.com/clarkchen/clarkchen.github.io">https://github.com/clarkchen/clarkchen.github.io</a></p>
+<p>但是这个项目里面是纯的HTML文件，而我们日常书写的习惯是，通过Markdown来写作，所以需要找一个软件能够将我们写的Markdown的内容，自动生成 html并且上传到 对应的 <strong>静态repo</strong> 的项目距下面，我们选择的工具是 Hexo。</p>
+<h1 id="Hexo-Deploy"><a href="#Hexo-Deploy" class="headerlink" title="Hexo Deploy"></a>Hexo Deploy</h1><p><a href="https://hexo.io/zh-cn/docs/one-command-deployment.html">https://hexo.io/zh-cn/docs/one-command-deployment.html</a></p>
+<p>例如我的配置是<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:clarkchen&#x2F;clarkchen.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  name: clarkchen</span><br><span class="line">  email: cxfhacker@gmail.com</span><br><span class="line">  ignore_hidden: false # default is true</span><br><span class="line">  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>做好这个配置之后，我们可以将markdown 对应的文件和 assests 传到另外一个 repo 上，然后编辑完成之后，通过<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo deploy </span><br></pre></td></tr></table></figure><br>来完成自动的文件上传和部署</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Gitbok</tag>
+      </tags>
   </entry>
   <entry>
     <title>爷爷追忆</title>
@@ -320,7 +320,7 @@ Bob-->>John: Jolly good!</pre>
 <p>利息=本金×<a href="https://baike.baidu.com/item/利率">利率</a>×存期</p>
 </blockquote>
 <p>在上面的例子中，用户每个月都要还款，也就是资金额是随着时间不断下降的，而银行却要我们每月按照全额借款的利息来支付。站在借款人的角度上，我们多付了利息，实际上是按照更高的利率在借贷。</p>
-<h3 id="IRR-amp-APR"><a href="#IRR-amp-APR" class="headerlink" title="IRR &amp; APR"></a>IRR &amp; APR</h3><p>这个更高的利率我们称为<strong>实际利率</strong>,<a href="https://baike.baidu.com/item/实际利率" title="实际利率">IRR</a>，简单来说就是，我们基于用户每个月的借款回款情况，综合得出的真实利率，计算方式利用 Excel表格中的<a href="https://support.microsoft.com/zh-cn/office/irr-%E5%87%BD%E6%95%B0-64925eaa-9988-495b-b290-3ad0c163c1bc" title="Excel IRR函数">IRR</a>公式计算。</p>
+<h2 id="IRR-amp-APR"><a href="#IRR-amp-APR" class="headerlink" title="IRR &amp; APR"></a>IRR &amp; APR</h2><p>这个更高的利率我们称为<strong>实际利率</strong>,<a href="https://baike.baidu.com/item/实际利率" title="实际利率">IRR</a>，简单来说就是，我们基于用户每个月的借款回款情况，综合得出的真实利率，计算方式利用 Excel表格中的<a href="https://support.microsoft.com/zh-cn/office/irr-%E5%87%BD%E6%95%B0-64925eaa-9988-495b-b290-3ad0c163c1bc" title="Excel IRR函数">IRR</a>公式计算。</p>
 <p>而这些产品在对外宣传时候的利率，其实是<strong>名义利率</strong>,<a href="https://baike.baidu.com/item/名义利率" title="名义利率">APR</a>，其定义是指一年内对贷款计息时，对外给出的年利率，年利率 = 息费之和 / 借款本金。</p>
 <p>在不同的还款方式下，两种利率计算方式是不一样的，甚至会出现名义利率远低于实际利率的情况。</p>
 <h1 id="有哪些还款方式？"><a href="#有哪些还款方式？" class="headerlink" title="有哪些还款方式？"></a>有哪些还款方式？</h1><p>我们在之后的各种还款方式的概念中，都会配置一个例子，借本金12000元，名义利率为10%，并计算实际支付利息金额。</p>
